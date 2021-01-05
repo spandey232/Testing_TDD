@@ -1,20 +1,20 @@
 package com.testing.tdd;
 
+import java.util.Scanner;
+
 import org.testng.Assert;
 import org.testng.annotations.*;
 public class Testing {
     @Test
 	public static void main(String[] args){
-		int sum=0;
-		int a=56;
-		int b=45;
+    	Scanner sc=new Scanner(System.in);
+    	int a=sc.nextInt();
+    	int b=sc.nextInt();
+		int sum=a+b;
 		Testing obj=new Testing();
-		sum=obj.sumMethod(a,b);
-		Assert.assertEquals(101, sum);
-		System.out.println(sum);
+		Assert.assertEquals(sum, obj.sumMethod(a,b));
 	}
 	public int sumMethod(int a,int b){
 		return a+b;
 	}
-	
 }
